@@ -1,0 +1,24 @@
+/target/
+*.class
+
+# Eclipse
+.settings/
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
