@@ -11,6 +11,15 @@
 *   **作法**：使用兩層迴圈，檢查每一對數字的和。
 *   **優點**：簡單直觀。
 *   **缺點**：效率低，時間複雜度 $O(n^2)$。
+    **關鍵程式碼**：
+    for(int i = 0; i < nums.length; i++) {
+        for(int j = i + 1; j < nums.length; j++) {
+            if(nums[i] + nums[j] == target) {
+                return new int[] { i, j };
+            }
+        }
+    }
+
 
 ### 2. 哈希表法 (Hash Table) - **推薦**
 *   **作法**：遍歷陣列時，計算當前數字需要的「補數」(Complement)，並檢查該補數是否已存在於 HashMap 中。

@@ -13,6 +13,33 @@ import java.util.Map;
  */
 public class Q1_TwoSum {
     
+	/**
+	 * 暴力解法
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
+	
+//	 public int[] twoSum(int[] nums, int target) {
+//		
+//		 for (int i = 0; i < nums.length; i++) {
+//			for(int j =i+1; j< nums.length; j++) {
+//				if( nums[i] + nums[j] == target) {
+//					return new  int[] {i,j};
+//				}
+//			}
+//		}
+//		 
+//		 throw new IllegalArgumentException("無解");
+//	 }
+	
+	 /**
+	  * 
+	  * @param nums
+	  * @param target
+	  * @return
+	  */
+	
     public int[] twoSum(int[] nums, int target) {
         // 使用 Map 紀錄「數值」與「索引」的對應
         Map<Integer, Integer> map = new HashMap<>();
@@ -31,12 +58,14 @@ public class Q1_TwoSum {
         
         throw new IllegalArgumentException("無解");
     }
+    
+    
 
     // 測試 Main 方法 (您可以在 Eclipse 直接 Run As -> Java Application)
     public static void main(String[] args) {
         Q1_TwoSum solution = new Q1_TwoSum();
         int[] nums = {2, 7, 11, 15};
-        int target = 9;
+        int target = 26;
         
         int[] result = solution.twoSum(nums, target);
         
