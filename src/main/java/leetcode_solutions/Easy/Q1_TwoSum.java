@@ -34,7 +34,7 @@ public class Q1_TwoSum {
 //	 }
 	
 	 /**
-	  * 
+	  * HashMap解法
 	  * @param nums
 	  * @param target
 	  * @return
