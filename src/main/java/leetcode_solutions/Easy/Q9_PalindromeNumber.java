@@ -35,11 +35,22 @@ public class Q9_PalindromeNumber {
 
         // 3. 數學翻轉邏輯 (迴圈將數字一位位取下並重組)
         while (temp > 0) {
-            int lastDigit = temp % 10;
+            int lastDigit = temp % 10;   
             reversed = (reversed * 10) + lastDigit;
             temp = temp / 10;
         }
+        // 流程模擬：假設 x = 121
+        // 迴圈第 1 次：lastDigit=1, reversed=1,   temp=12
+        // 迴圈第 2 次：lastDigit=2, reversed=12,  temp=1
+        // 迴圈第 3 次：lastDigit=1, reversed=121, temp=0
 
+        // 流程模擬：假設 x = 12321
+        // 迴圈第 1 次：lastDigit=1, reversed=1,     temp=1232
+        // 迴圈第 2 次：lastDigit=2, reversed=12,    temp=123
+        // 迴圈第 3 次：lastDigit=3, reversed=123,   temp=12
+        // 迴圈第 4 次：lastDigit=2, reversed=1232,  temp=1
+        // 迴圈第 5 次：lastDigit=1, reversed=12321, temp=0
+        
         // 4. 比對翻轉後的結果是否等於原始輸入
         return reversed == x;
     }
