@@ -29,7 +29,11 @@
 
 ## 💬 溝通與文檔規則
 1. **語言**：無論代碼註解、文件或對話，**一律使用繁體中文**。
-2. **註解格式**：每個完成的 Function/Feature 必須包含 Javadoc 風格的註解。
+2. **註解格式**：每個完成的 Class 或 Function 必須包含標準 Javadoc 註解，內容須包含：
+   - 題目/功能描述。
+   - 任務細節/實作步驟。
+   - `@author` (例如：Takahiro)。
+   - `@date` (當前日期)。
 3. **Commit Message**：必須使用繁體中文，且符合 `feat/fix/docs/refactor` 前綴規範。
 
 ---
