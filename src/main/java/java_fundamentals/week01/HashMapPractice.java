@@ -9,6 +9,7 @@ import java.util.HashMap;
  * 2. 使用 put() 存入資料並觀察 Key 重複時的覆蓋現象
  * 3. 使用 get() 與 containsKey() 查找資料
  * 4. 使用 size() 確認資料總筆數
+ * 5. 使用 keySet() 遍歷所有鍵並取出值 (Traversal)
  * 
  * @author Takahiro
  * @date 2026/04/16
@@ -41,5 +42,17 @@ public class HashMapPractice {
         // 5. 資料筆數 (Size)
         System.out.println("\n目前員工總數: " + employeeMap.size());
         System.out.println("最終員工名單: " + employeeMap);
+
+        // 6. 遍歷鍵值對 (keySet) - 這是今天學到的進階技巧！
+        System.out.println("\n--- 使用 keySet() 進行遍歷 ---");
+        /*
+         * keySet() 會回傳 Map 中所有的 Key (鍵)
+         * 我們可以使用 for-each 迴圈來依序取出每一個 Key
+         */
+        for (Integer id : employeeMap.keySet()) {
+            // 透過 Key (ID) 拿到對應的 Value (姓名)
+            String name = employeeMap.get(id);
+            System.out.println("員工 ID: " + id + ", 姓名: " + name);
+        }
     }
 }
