@@ -1,0 +1,61 @@
+package java_fundamentals.week02;
+
+/**
+ * 醫師資訊實體類別
+ * 用於存放 HIS 系統中醫師的基本資料與診斷行為。
+ * 
+ * @author Takahiro
+ * @date 2026/04/20
+ */
+public class Doctor {
+
+	private String doctorId;           // 醫師工號
+	private String doctorName;         // 醫師姓名
+	private String dept;               // 所屬科別
+	private String title;              // 職稱 (如：主治醫師)
+	private String roomCode;           // 診間代碼
+	private int yearsOfExperience;     // 醫師年資
+	
+	// --- Getters and Setters (為了讓你方便練習，我先幫你補齊) ---
+
+	public String getDoctorId() { return doctorId; }
+	public void setDoctorId(String doctorId) { this.doctorId = doctorId; }
+
+	public String getDoctorName() { return doctorName; }
+	public void setDoctorName(String doctorName) { this.doctorName = doctorName; }
+
+	public String getDept() { return dept; }
+	public void setDept(String dept) { this.dept = dept; }
+
+	public String getTitle() { return title; }
+	public void setTitle(String title) { this.title = title; }
+
+	public String getRoomCode() { return roomCode; }
+	public void setRoomCode(String roomCode) { this.roomCode = roomCode; }
+
+	public int getYearsOfExperience() { return yearsOfExperience; }
+	public void setYearsOfExperience(int yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
+
+	/**
+	 * 【核心邏輯挑戰】診斷病人
+	 * 請在 HospitalSystem 中調用此方法，並傳遞一個 Patient 物件。
+	 * 
+	 * @param patient 被診斷的病人物件
+	 */
+	public void diagnose(Patient patient) {
+		// --- 這裡留給你實作 ---
+		// 1. 印出： "[醫師姓名] 醫師正在為 [病人姓名] 進行診斷..."
+		// 2. 使用 patient.setPrimaryDiagnosis("...") 為病人填寫診斷結果。
+		// 3. 印出： "診斷完成，結果為： [該病人的主診斷]"
+		System.out.println(" [醫師姓名] 醫師正在為 [病人姓名] 進行診斷..." + doctorName + " 醫師正在為 " + patient.getPatientName() + " 進行診斷...");
+		patient.setPrimaryDiagnosis("感冒");
+		System.out.println("診斷完成，結果為： " + patient.getPrimaryDiagnosis());
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", dept=" + dept + ", title=" + title
+				+ ", roomCode=" + roomCode + ", yearsOfExperience=" + yearsOfExperience + "]";
+	}
+}
