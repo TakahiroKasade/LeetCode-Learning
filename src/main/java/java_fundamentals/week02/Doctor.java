@@ -34,7 +34,15 @@ public class Doctor {
 	public void setRoomCode(String roomCode) { this.roomCode = roomCode; }
 
 	public int getYearsOfExperience() { return yearsOfExperience; }
-	public void setYearsOfExperience(int yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
+	
+	//確保年資不能為負數。
+	public void setYearsOfExperience(int yearsOfExperience) { 
+		if(yearsOfExperience<0) {
+			System.out.println("醫生年資，不得為負!!");
+			return;
+		}
+		this.yearsOfExperience = yearsOfExperience; 
+	}
 
 	/**
 	 * 【核心邏輯挑戰】診斷病人
@@ -43,10 +51,7 @@ public class Doctor {
 	 * @param patient 被診斷的病人物件
 	 */
 	public void diagnose(Patient patient) {
-		// --- 這裡留給你實作 ---
-		// 1. 印出： "[醫師姓名] 醫師正在為 [病人姓名] 進行診斷..."
-		// 2. 使用 patient.setPrimaryDiagnosis("...") 為病人填寫診斷結果。
-		// 3. 印出： "診斷完成，結果為： [該病人的主診斷]"
+		
 		System.out.println(" [醫師姓名] 醫師正在為 [病人姓名] 進行診斷..." + doctorName + " 醫師正在為 " + patient.getPatientName() + " 進行診斷...");
 		patient.setPrimaryDiagnosis("感冒");
 		System.out.println("診斷完成，結果為： " + patient.getPrimaryDiagnosis());

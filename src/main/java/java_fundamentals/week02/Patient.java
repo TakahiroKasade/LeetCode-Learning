@@ -10,26 +10,26 @@ package java_fundamentals.week02;
 public class Patient {
 
 	// 基本資料
-	String patientName;        // 姓名
-	String gender;             // 性別
-	String idCard;             // 身分證字號
-	int age;                   // 年紀
+	private String patientName;        // 姓名
+	private String gender;             // 性別
+	private String idCard;             // 身分證字號
+	private int age;                   // 年紀
+	private double temperature;  //體溫
 
 	// 帳務與病歷資訊
-	String accountNo;          // 批價帳號
-	String chartNo;            // 病歷號
-	String bedNo;              // 病床號
-	String dept;               // 科別名稱
+	private String accountNo;          // 批價帳號
+	private String chartNo;            // 病歷號
+	private String bedNo;              // 病床號
+	private String dept;               // 科別名稱
 
 	// 醫療團隊與診斷
-	String attendingPhysician; // 主治醫師
-	String primaryDiagnosis;   // 主診斷
-	
-	String procedure;          // 術式 (手術名稱)
+	private String attendingPhysician; // 主治醫師
+	private String primaryDiagnosis;   // 主診斷
+	private String procedure;          // 術式 (手術名稱)
 
 	// 手術時間資訊
-	String surgeryDate;        // 手術日期
-	String surgeryTime;        // 手術時間
+	private String surgeryDate;        // 手術日期
+	private String surgeryTime;        // 手術時間
 	
 	public String getPatientName() {
 		return patientName;
@@ -52,9 +52,34 @@ public class Patient {
 	public int getAge() {
 		return age;
 	}
+	
 	public void setAge(int age) {
-		this.age = age;
+	    // 如果年齡小於 0 或超過 150，就報錯且不賦值
+	    if (age < 0 || age > 150) {
+	        System.out.println("⚠️ 警告：嘗試設定不合理的年齡 [" + age + "]，已被攔截！");
+	        return; 
+	    }
+	    this.age = age;
 	}
+	
+	public double getTemperature() {
+		return temperature;
+	}
+	
+	/**
+	 * 在 setTemperature 方法中，限制體溫必須在 35.0 到 42.0 度之間。
+		若超出範圍，印出「⚠️ 體溫數據異常，請確認後輸入」。
+	 * @param temperature
+	 */
+	
+	public void setTemperature(double temperature) {
+		if (35>temperature || temperature>42) {
+			System.out.println("⚠️ 體溫數據異常，請確認後輸入");
+			return;
+		}
+		this.temperature = temperature;
+	}
+
 	public String getAccountNo() {
 		return accountNo;
 	}
@@ -109,13 +134,15 @@ public class Patient {
 	public void setSurgeryTime(String surgeryTime) {
 		this.surgeryTime = surgeryTime;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "Patient [patientName=" + patientName + ", gender=" + gender + ", idCard=" + idCard + ", age=" + age
-				+ ", accountNo=" + accountNo + ", chartNo=" + chartNo + ", bedNo=" + bedNo + ", dept=" + dept
-				+ ", attendingPhysician=" + attendingPhysician + ", primaryDiagnosis=" + primaryDiagnosis
-				+ ", procedure=" + procedure + ", surgeryDate=" + surgeryDate + ", surgeryTime=" + surgeryTime + "]";
+				+ ", temperature=" + temperature + ", accountNo=" + accountNo + ", chartNo=" + chartNo + ", bedNo="
+				+ bedNo + ", dept=" + dept + ", attendingPhysician=" + attendingPhysician + ", primaryDiagnosis="
+				+ primaryDiagnosis + ", procedure=" + procedure + ", surgeryDate=" + surgeryDate + ", surgeryTime="
+				+ surgeryTime + "]";
 	}
 	
 	
