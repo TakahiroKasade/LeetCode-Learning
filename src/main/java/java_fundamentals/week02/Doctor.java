@@ -9,6 +9,20 @@ package java_fundamentals.week02;
  */
 public class Doctor {
 
+	public Doctor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Doctor(String doctorId, String doctorName, String dept) {
+		super();
+		this.doctorId = doctorId;
+		this.doctorName = doctorName;
+		this.dept = dept;
+	}
+
+
 	private String doctorId;           // 醫師工號
 	private String doctorName;         // 醫師姓名
 	private String dept;               // 所屬科別

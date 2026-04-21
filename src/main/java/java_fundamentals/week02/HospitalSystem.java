@@ -21,34 +21,40 @@ package java_fundamentals.week02;
  */
 public class HospitalSystem {
 
+	
+	public HospitalSystem() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static void main(String[] args) {
-
-		Patient p1 = new Patient();
+		
+		// 1. 使用「核心欄位建構子」直接建立病人 (姓名, 性別, 身分證, 年紀)
+		Patient p1 = new Patient("Sam","男","A123456789",50);
 		Patient p2 = new Patient();
-		Patient p3 = new Patient(); 
-		Doctor d1 = new Doctor();
-		p1.setPatientName("Sam");
-		p1.setAccountNo("I1100016234");
-		p1.setAge(500);
-		p1.setPrimaryDiagnosis("末稍血管修補及吻合術");
-		p1.setTemperature(42.5);
-		p2=p1;
-		p2.setPatientName("Tom");
 		
-		d1.setDoctorName("吳依弘");
-		d1.diagnose(p1);
-		d1.setYearsOfExperience(-1);
-		 
-		System.out.println(" p1 的所有設定資訊: " + p1.toString());
-		System.out.println(" p2 的姓名與年紀，觀察預設值: " + p2.toString());
-		System.out.println(" d1 的所有設定資訊: " + d1.toString());
-		
-		System.out.println("p1的地址: " + p1.hashCode());
-		System.out.println("p2的地址: " + p2.hashCode());
-		
-		
-		//System.out.println(p3.getPatientName().length()); //會發生NullPointException
-		
+		// 醫師工號, 醫師姓名, 科別
+		Doctor d1 = new Doctor("D001", "吳依弘", "心臟外科");
+
+		    
+		// 2. 剩下的臨床資料再用 setter 補上
+			p1.setAccountNo("I1100016234");
+			p1.setPrimaryDiagnosis("末稍血管修補及吻合術");
+			p1.setTemperature(42.5);
+			p2=p1;
+			p2.setPatientName("Tom");
+			
+			d1.diagnose(p1);
+			d1.setYearsOfExperience(-1);
+			 
+			System.out.println(" p1 的所有設定資訊: " + p1.toString());
+			System.out.println(" p2 的姓名與年紀，觀察預設值: " + p2.toString());
+			System.out.println(" d1 的所有設定資訊: " + d1.toString());
+			
+			System.out.println("p1的地址: " + p1.hashCode());
+			System.out.println("p2的地址: " + p2.hashCode());
+			
+			//System.out.println(p3.getPatientName().length()); //會發生NullPointException
 	}
 
 }

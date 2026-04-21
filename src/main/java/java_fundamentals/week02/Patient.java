@@ -8,7 +8,20 @@ package java_fundamentals.week02;
  * @date 2026/04/20
  */
 public class Patient {
-
+	
+	public Patient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Patient(String patientName, String gender, String idCard, int age) {
+		super();
+		this.patientName = patientName;
+		this.gender = gender;
+		this.idCard = idCard;
+		this.age = age;
+	}
+	
 	// 基本資料
 	private String patientName;        // 姓名
 	private String gender;             // 性別
