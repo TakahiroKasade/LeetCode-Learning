@@ -29,6 +29,20 @@
 4. **技術文件**：存於 `docs/` 資料夾，命名格式為 `yyyyMMdd_描述.md`。
 5. **考核紀錄**：存於 `docs/homework/`，命名格式為 `yyyyMMdd_Homework.md`。
 6. **學習心得**：存於 `Learning-Notes/Reflections/`，命名格式為 `yyyyMMdd_心得描述_期間.md`。
+7. **Side Project Prompts**：存於 `docs/java_sideproject_prompts/`，命名格式為 `yyyyMMdd_中文描述.md`，用於存放可複用的功能模組邏輯與 AI 指令集。
+
+
+---
+
+## 🚀 自動化練習流程 (Auto-Scaffolding)
+當使用者呼叫 `docs/java_sideproject_prompts/` 內的邏輯模組並要求出題時，AI 必須執行以下動作：
+1. **自動建檔**：直接在 `src/main/java/java_projects/` 目錄下建立新的 `.java` 檔案。
+2. **命名規範**：檔案名稱應為 `Q_中文功能描述.java` (例如：`Q_CSV解析練習.java`)。
+3. **Javadoc 題目說明**：在 Class 開頭，必須使用標準 Javadoc 格式寫入：
+   - **題目背景與情境**。
+   - **資料格式說明** (提供 Legacy 與 Detailed 範例字串)。
+   - **實作任務與限制條件**。
+4. **代碼鷹架**：保留 `package java_projects;`、空的 Class 結構以及 `public static void main` 方法，內容留空供使用者手寫。
 
 ---
 
@@ -67,5 +81,5 @@
 
 ---
 
-**最後更新日期**：2026 年 4 月 17 日  
+**最後更新日期**：2026 年 4 月 23 日  
 **狀態**：🔥 強制執行中
