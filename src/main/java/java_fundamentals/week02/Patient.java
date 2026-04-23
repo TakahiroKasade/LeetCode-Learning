@@ -9,6 +9,8 @@ package java_fundamentals.week02;
  */
 public class Patient {
 	
+	private static int patientCount = 0;
+	
 	/**
 	 * 【任務 1：無參建構子】
 	 * 請使用 this() 呼叫「四參數建構子」，給予預設值：姓名="未命名", 性別="未知", 身分證="N/A", 年齡=0
@@ -44,7 +46,9 @@ public class Patient {
 		this.gender=gender;
 		this.idCard=idCard;
 		this.setAge(age);
-		
+		patientCount++;
+		this.chartNo = "P" + String.format("%03d", patientCount);
+		 System.out.println(">>> [系統] 自動生成病歷號：" + this.chartNo);
 	}
 	
 	
@@ -69,6 +73,7 @@ public class Patient {
 	// 手術時間資訊
 	private String surgeryDate;        // 手術日期
 	private String surgeryTime;        // 手術時間
+	
 	
 	public String getPatientName() {
 		return patientName;
@@ -173,6 +178,13 @@ public class Patient {
 	public void setSurgeryTime(String surgeryTime) {
 		this.surgeryTime = surgeryTime;
 	}
+
+
+	// 注意：因為要查的是 static 變數，所以方法也要加上 static
+	public static int getTotalPatients() {
+		return patientCount;
+	}
+
 	
 
 	@Override

@@ -49,7 +49,7 @@ public class HospitalSystem {
 	    System.out.println("無參醫師結果：" + dNoArg.getDoctorId() + ", 醫師姓名：" + dNoArg.getDoctorName());
 	    System.out.println("---------------");
 	    // 2. 使用兩參數建構子
-	    Doctor dTwoArg  = new Doctor();
+	    Doctor dTwoArg = new Doctor("D007", "龐德");
 	    System.out.println("兩參數病人結果：" + dTwoArg.getDoctorId() + ", 醫師姓名：" + dTwoArg.getDoctorName());
 	    System.out.println("---------------");
 	    
@@ -57,6 +57,12 @@ public class HospitalSystem {
 		// 1. 使用「核心欄位建構子」直接建立病人 (姓名, 性別, 身分證, 年紀)
 		Patient p1 = new Patient("Sam","男","A123456789",50);
 		Patient p2 = new Patient();
+		Patient p3 = new Patient("大雄", "男", "B987654321", 40);
+
+		System.out.println("p1 的病歷號：" + p1.getChartNo());
+		System.out.println("p2 的病歷號：" + p2.getChartNo());
+		System.out.println("p3 的病歷號：" + p3.getChartNo());
+
 		
 		// 醫師工號, 醫師姓名, 科別
 		Doctor d1 = new Doctor("D001", "吳依弘", "心臟外科");
@@ -66,7 +72,7 @@ public class HospitalSystem {
 			p1.setAccountNo("I1100016234");
 			p1.setPrimaryDiagnosis("末稍血管修補及吻合術");
 			p1.setTemperature(42.5);
-			p2=p1;
+			//p2=p1;
 			p2.setPatientName("Tom");
 			
 			d1.diagnose(p1);
@@ -78,7 +84,11 @@ public class HospitalSystem {
 			
 			System.out.println("p1的地址: " + p1.hashCode());
 			System.out.println("p2的地址: " + p2.hashCode());
-			
+			System.out.println("p3的地址: " + p3.hashCode());
+
+			// 直接用「類別名稱」呼叫，不用 p1 或 p2
+			System.out.println("目前全院總人數：" + Patient.getTotalPatients());
+
 			//System.out.println(p3.getPatientName().length()); //會發生NullPointException
 	}
 
