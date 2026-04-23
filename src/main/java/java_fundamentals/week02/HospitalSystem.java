@@ -28,6 +28,31 @@ public class HospitalSystem {
 	}
 	
 	public static void main(String[] args) {
+		/*
+		System.out.println("=== 測試Patient開始 ===");
+		 // 1. 使用無參建構子
+	    Patient pNoArg = new Patient();
+	    System.out.println("無參病人結果：" + pNoArg.getPatientName() + ", 性別：" + pNoArg.getGender());
+	    System.out.println("---------------");
+	    // 2. 使用兩參數建構子
+	    Patient pTwoArg = new Patient("小明", 25);
+	    System.out.println("兩參數病人結果：" + pTwoArg.getPatientName() + ", 身分證：" + pTwoArg.getIdCard());
+	    System.out.println("---------------");
+	    // 3. 使用四參數建構子
+	    Patient pFull = new Patient("大壯", "男", "A123456789", 40);
+	    System.out.println("四參數病人結果：" + pFull.getPatientName());
+	    System.out.println("=== 測試結束 ===");
+	    */
+	    
+	    System.out.println("=== 測試Doctor開始 ===");
+	    Doctor dNoArg = new Doctor();
+	    System.out.println("無參醫師結果：" + dNoArg.getDoctorId() + ", 醫師姓名：" + dNoArg.getDoctorName());
+	    System.out.println("---------------");
+	    // 2. 使用兩參數建構子
+	    Doctor dTwoArg  = new Doctor();
+	    System.out.println("兩參數病人結果：" + dTwoArg.getDoctorId() + ", 醫師姓名：" + dTwoArg.getDoctorName());
+	    System.out.println("---------------");
+	    
 		
 		// 1. 使用「核心欄位建構子」直接建立病人 (姓名, 性別, 身分證, 年紀)
 		Patient p1 = new Patient("Sam","男","A123456789",50);

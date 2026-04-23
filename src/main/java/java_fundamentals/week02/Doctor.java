@@ -1,5 +1,6 @@
 package java_fundamentals.week02;
 
+
 /**
  * 醫師資訊實體類別
  * 用於存放 HIS 系統中醫師的基本資料與診斷行為。
@@ -9,17 +10,30 @@ package java_fundamentals.week02;
  */
 public class Doctor {
 
+	/**
+	 * 【任務 1：無參建構子】
+	 * 預設值：工號="D000", 姓名="未命名", 科別="一般科"
+	 */
 	public Doctor() {
-		super();
-		// TODO Auto-generated constructor stub
+		this("D000", "未命名", "一般科");
 	}
 	
+	/**
+	 * 【任務 2：兩參數建構子】
+	 * 只給工號與姓名，科別預設為 "一般科"
+	 */
+	public Doctor(String doctorId, String doctorName) {
+		this(doctorId, doctorName, "一般科");
+	}
 	
+	/**
+	 * 【核心建構子】
+	 */
 	public Doctor(String doctorId, String doctorName, String dept) {
-		super();
 		this.doctorId = doctorId;
-		this.doctorName = doctorName;
+		this.setDoctorName(doctorName);;
 		this.dept = dept;
+		
 	}
 
 

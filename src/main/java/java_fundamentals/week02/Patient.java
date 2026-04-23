@@ -9,18 +9,44 @@ package java_fundamentals.week02;
  */
 public class Patient {
 	
+	/**
+	 * 【任務 1：無參建構子】
+	 * 請使用 this() 呼叫「四參數建構子」，給予預設值：姓名="未命名", 性別="未知", 身分證="N/A", 年齡=0
+	 */
 	public Patient() {
-		super();
-		// TODO Auto-generated constructor stub
+		
+		 this("未命名", "未知", "N/A", 0); 
+		 
 	}
 	
-	public Patient(String patientName, String gender, String idCard, int age) {
-		super();
-		this.patientName = patientName;
-		this.gender = gender;
-		this.idCard = idCard;
-		this.age = age;
+	/**
+	 * 【任務 2：兩參數建構子 (重載)】
+	 * 請使用 this() 呼叫「四參數建構子」，姓名與年記由參數傳入，性別預設為"未知", 身分證預設為"N/A"
+	 */
+	public Patient(String patientName, int age) {
+		
+		 this(patientName, "未知", "N/A", age);
+		 
 	}
+	
+	
+	/**
+	 * 【任務 3：核心四參數建構子】
+	 * 這是所有建構子的終點。請在此處完成賦值：
+	 * 1. this.patientName = patientName;
+	 * 2. ... (以此類推)
+	 * 💡 提示：年紀的部分建議呼叫 this.setAge(age)，這樣可以共用昨天寫的驗證邏輯！
+	 */
+	public Patient(String patientName, String gender, String idCard, int age) {
+		
+		System.out.println(">>> [核心建構子] 正在為病人 " + patientName + " 初始化資料...");
+		this.patientName=patientName;
+		this.gender=gender;
+		this.idCard=idCard;
+		this.setAge(age);
+		
+	}
+	
 	
 	// 基本資料
 	private String patientName;        // 姓名

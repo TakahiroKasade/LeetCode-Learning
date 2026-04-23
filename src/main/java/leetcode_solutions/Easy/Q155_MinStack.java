@@ -23,31 +23,50 @@ public class Q155_MinStack {
      */
     static class MinStack {
         // 在這裡宣告你的 Stack (提示：需要兩個)
+        private Stack<Integer> dataStack;
+        private Stack<Integer> minStack;
         
         /**
          * 初始化 MinStack
          */
         public MinStack() {
             // 建構子：在這裡 new 出你的 Stack
+            dataStack = new Stack<>();
+            minStack = new Stack<>();
         }
         
+        //放
         public void push(int val) {
             // 邏輯：dataStack 直接放；minStack 要判斷 (新值是否比目前最小值小？)
+            if(minStack.isEmpty()||val<=minStack.peek()){
+                minStack.push(val);
+            }
+            dataStack.push(val);
         }
         
+        //移除
         public void pop() {
             // 邏輯：兩邊都要同步移出
+            if(dataStack.pop().equals(minStack.peek())){
+                minStack.pop();
+            }
         }
         
         public int top() {
             // 邏輯：回傳 dataStack 的最頂端
-            return 0;
+            return dataStack.peek();
         }
         
         public int getMin() {
             // 邏輯：直接看 minStack 的最頂端
-            return 0;
+            return minStack.peek();
         }
+
+        @Override
+        public String toString() {
+            return "Data: " + dataStack.toString() + " | Min: " + minStack.toString();
+        }
+
     }
 
     public static void main(String[] args) {
@@ -56,6 +75,7 @@ public class Q155_MinStack {
         minStack.push(-2);
         minStack.push(0);
         minStack.push(-3);
+        System.out.println("目前MinStack有的資料" + minStack);
         System.out.println("目前最小值 (預期 -3): " + minStack.getMin()); 
         minStack.pop();
         System.out.println("Top 元素 (預期 0): " + minStack.top());    
