@@ -37,7 +37,7 @@
 ## 🚀 自動化練習流程 (Auto-Scaffolding)
 當使用者呼叫 `docs/java_sideproject_prompts/` 內的邏輯模組並要求出題時，AI 必須執行以下動作：
 1. **自動建檔**：直接在 `src/main/java/java_projects/` 目錄下建立新的 `.java` 檔案。
-2. **命名規範**：檔案名稱應為 `Q_中文功能描述.java` (例如：`Q_CSV解析練習.java`)。
+2. **命名規範**：檔案名稱與 Class 名稱應為 `Q_英文功能描述.java` (例如：`Q_CSVParserPractice.java`)。範例應反映 Java 命名慣例 (PascalCase)。
 3. **Javadoc 題目說明**：在 Class 開頭，必須使用標準 Javadoc 格式寫入：
    - **題目背景與情境**。
    - **資料格式說明** (提供 Legacy 與 Detailed 範例字串)。
@@ -81,5 +81,5 @@
 
 ---
 
-**最後更新日期**：2026 年 4 月 23 日  
+**最後更新日期**：2026 年 4 月 24 日  
 **狀態**：🔥 強制執行中

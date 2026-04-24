@@ -65,7 +65,7 @@ public class Q_WardMonitoringChallenge {
                     index++;
                 }
             }
-        }
+        } 
         // 4. 印出網格結果驗證 (請寫在第 69 行)
         System.out.println("--- 最終轉換成果 ---");
         for (int i = 0; i < 3; i++) {
