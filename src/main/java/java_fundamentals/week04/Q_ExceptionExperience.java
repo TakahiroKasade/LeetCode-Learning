@@ -35,8 +35,9 @@ public class Q_ExceptionExperience {
 			}
             
         }
+        
 
-        // 觀察重點：這句話最後會被印出來嗎？
-        System.out.println("--- 🟢 HIS 系統處理完畢，開始計算劑量 ---");
+        // 觀察重點：這句話最後會被印出來嗎？i
+        // System.out.println("--- 🟢 HIS 系統處理完畢，開始計算劑量 ---");
     }
 }
