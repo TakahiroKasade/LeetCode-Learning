@@ -15,14 +15,6 @@ package leetcode_solutions.Easy;
  * @author Takahiro
  * @date 2026-05-05
  */
-// class ListNode {
-//     int val;
-//     ListNode next;
-//     ListNode(int x) {
-//         val = x;
-//         next = null;
-//     }
-// }
 
 public class Q141_LinkedListCycle {
 	
