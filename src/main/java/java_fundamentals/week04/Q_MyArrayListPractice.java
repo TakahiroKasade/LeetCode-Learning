@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 
  * @author Takahiro
  * @date 2026-05-06
- */
+ */ 
 public class Q_MyArrayListPractice {
 
     // 底層用來存資料的普通陣列
