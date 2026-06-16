@@ -19,6 +19,7 @@ public class Q_TestTextarea {
     public static String htmlEscape(String input) {
         if (input == null) return null;
 
-        return input.replace("<", "&lt;") .replace(">", "&gt;");
+        return input.replace("<", "&lt;") .replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+        
     }
 }
