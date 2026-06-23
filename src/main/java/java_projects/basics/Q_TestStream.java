@@ -37,6 +37,7 @@ public class Q_TestStream {
         // 提示：使用 reduce(初始值, (累加值, 當前值) -> 累加值 + 當前值)
         // [請在此處編寫代碼]
         int sum = result.stream().reduce(0, (sumVal, n) -> sumVal + n);
+//        int sum = result.stream().mapToInt(n->n).sum();
         System.out.println("所有數字加總結果（預期為 300）: " + sum);
     }
 }
